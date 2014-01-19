@@ -24,11 +24,7 @@ package hudson.plugins.chapulin;
 import hudson.model.Action;
 
 /**
- * {@link ChapulinAction} keeps the style and fact associated with the action.
- * For more info, please watch <a
- * href="http://www.youtube.com/watch?v=Vb7lnpk3tRY"
- * >http://www.youtube.com/watch?v=Vb7lnpk3tRY</a>
- * @author cliffano
+ * {@link ChapulinAction} keeps the style and fact associated with the action. 
  */
 public final class ChapulinAction implements Action {
 
