@@ -4,19 +4,19 @@ import junit.framework.TestCase;
 
 public class RoundhouseActionTest extends TestCase {
 
-	private RoundhouseAction action;
+	private ChapulinAction action;
 
 	public void setUp() {
-		action = new RoundhouseAction(Style.BAD_ASS,
-				"Chuck Norris can divide by zero.");
+		action = new ChapulinAction(Style.BAD_ASS,
+				"Calma, que no panda el cúnico");
 	}
 
 	public void testAccessors() {
 		assertEquals(Style.BAD_ASS, action.getStyle());
-		assertEquals("Chuck Norris can divide by zero.", action
+		assertEquals("Calma, que no panda el cúnico", action
 				.getFact());
-		assertEquals("Chuck Norris", action.getDisplayName());
+		assertEquals("El Chapulin Colorado", action.getDisplayName());
 		assertNull(action.getIconFileName());
-		assertEquals("chucknorris", action.getUrlName());
+		assertEquals("chapulin", action.getUrlName());
 	}
 }

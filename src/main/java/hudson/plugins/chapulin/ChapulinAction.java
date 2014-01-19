@@ -24,13 +24,13 @@ package hudson.plugins.chapulin;
 import hudson.model.Action;
 
 /**
- * {@link RoundhouseAction} keeps the style and fact associated with the action.
+ * {@link ChapulinAction} keeps the style and fact associated with the action.
  * For more info, please watch <a
  * href="http://www.youtube.com/watch?v=Vb7lnpk3tRY"
  * >http://www.youtube.com/watch?v=Vb7lnpk3tRY</a>
  * @author cliffano
  */
-public final class RoundhouseAction implements Action {
+public final class ChapulinAction implements Action {
 
     /**
      * The style - for backward compatibility to version 0.2.
@@ -59,7 +59,7 @@ public final class RoundhouseAction implements Action {
      * @param fact
      *            the fact
      */
-    public RoundhouseAction(final Style style, final String fact) {
+    public ChapulinAction(final Style style, final String fact) {
         super();
         this.mStyle = style;
         this.mFact = fact;
@@ -70,7 +70,7 @@ public final class RoundhouseAction implements Action {
      * @return the display name
      */
     public String getDisplayName() {
-        return "Chuck Norris";
+        return "El Chapulin Colorado";
     }
 
     /**
@@ -86,13 +86,10 @@ public final class RoundhouseAction implements Action {
      * @return the URL name
      */
     public String getUrlName() {
-        return "chucknorris";
+        return "chapulin";
     }
 
-    /**
-     * Gets the Chuck Norris style.
-     * @return the style
-     */
+    
     public Style getStyle() {
         Style theStyle;
         if (mStyle != null) {
@@ -103,10 +100,7 @@ public final class RoundhouseAction implements Action {
         return theStyle;
     }
 
-    /**
-     * Gets the Chuck Norris fact.
-     * @return the fact
-     */
+    
     public String getFact() {
         String theFact;
         if (mFact != null) {

@@ -71,7 +71,7 @@ public class CordellWalkerRecorder extends Recorder {
      */
     public CordellWalkerRecorder(final FactGenerator factGenerator) {
         this.factGenerator = factGenerator;
-        LOGGER.info("Chuck Norris is activated");
+        LOGGER.info("El Chapulin Colorado esta activado");
     }
 
     /**
@@ -87,7 +87,7 @@ public class CordellWalkerRecorder extends Recorder {
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
             String fact = factGenerator.getRandomFact();
-            action = new RoundhouseAction(style, fact);
+            action = new ChapulinAction(style, fact);
         }
         return action;
     }
@@ -113,7 +113,7 @@ public class CordellWalkerRecorder extends Recorder {
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
         String fact = factGenerator.getRandomFact();
-        build.getActions().add(new RoundhouseAction(style, fact));
+        build.getActions().add(new ChapulinAction(style, fact));
         return true;
     }
 

@@ -6,20 +6,20 @@
         <version>1.434</version>
     </parent>
 
-    <groupId>org.jvnet.hudson.plugins</groupId>
-    <artifactId>chucknorris</artifactId>
-    <version>0.6-SNAPSHOT</version>
-    <name>ChuckNorris Plugin</name>
-    <description>Displays a picture of Chuck Norris (instead of Jenkins the butler) and a random Chuck Norris 'The Programmer' fact on each build page.</description>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin</url>
+    <groupId>org.jucoba.hudson.plugins</groupId>
+    <artifactId>chapulin</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <name>Chapulin Plugin</name>
+    <description>DMuestra una foto del Chapulin Colorado y una de sus frases famosas en cada build</description>
+    <url>http://wiki.jenkins-ci.org/display/JENKINS/Chapulin+Plugin</url>
     <packaging>hpi</packaging>
 
     <developers>
         <developer>
-            <id>cliffano</id>
-            <name>Cliffano Subagio</name>
-            <email>blah@cliffano.com</email>
-            <timezone>+10</timezone>
+            <id>jucoba</id>
+            <name>Jubel Correa</name>
+            <email>jubel.correa@gmail.com</email>
+            <timezone>-5</timezone>
         </developer>
     </developers>
     <licenses>
@@ -113,7 +113,7 @@
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <configuration>  
-                    <targetJdk>1.5</targetJdk>  
+                    <targetJdk>1.7</targetJdk>  
                 </configuration> 
             </plugin>
             <plugin>
@@ -126,9 +126,9 @@
     </reporting>
     
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/chucknorris-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/chucknorris-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/chucknorris-plugin</url>
+        <connection>scm:git:git://github.com/jucoba/chapulin-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jucoba/chapulin-plugin.git</developerConnection>
+        <url>https://github.com/jucoba/chapulin-plugin</url>
     </scm>
 
     <pluginRepositories>

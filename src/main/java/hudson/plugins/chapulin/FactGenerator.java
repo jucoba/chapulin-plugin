@@ -23,10 +23,7 @@ package hudson.plugins.chapulin;
 
 import java.util.Random;
 
-/**
- * {@link FactGenerator} provides Chuck Norris facts.
- * @author cliffano
- */
+
 public class FactGenerator {
 
     

@@ -39,13 +39,13 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
 		when(mockGenerator.getRandomFact()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"No contaban con mi asticia");
 
 		Action action = recorder.getProjectAction(mockProject);
 
-		assertTrue(action instanceof RoundhouseAction);
-		assertEquals(Style.THUMB_UP, ((RoundhouseAction) action).getStyle());
-		assertNotNull(((RoundhouseAction) action).getFact());
+		assertTrue(action instanceof ChapulinAction);
+		assertEquals(Style.THUMB_UP, ((ChapulinAction) action).getStyle());
+		assertNotNull(((ChapulinAction) action).getFact());
 	}
 
 	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact()
@@ -56,7 +56,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockBuild.getActions()).thenReturn(actions);
 
 		when(mockGenerator.getRandomFact()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"No contaban con mi asticia");
 
 		assertEquals(0, actions.size());
 
@@ -64,10 +64,10 @@ public class CordellWalkerRecorderTest extends TestCase {
 				mock(BuildListener.class));
 
 		assertEquals(1, actions.size());
-		assertTrue(actions.get(0) instanceof RoundhouseAction);
-		assertEquals(Style.BAD_ASS, ((RoundhouseAction) actions.get(0))
+		assertTrue(actions.get(0) instanceof ChapulinAction);
+		assertEquals(Style.BAD_ASS, ((ChapulinAction) actions.get(0))
 				.getStyle());
-		assertEquals("Chuck Norris burst the dot com bubble.",
-				((RoundhouseAction) actions.get(0)).getFact());
+		assertEquals("No contaban con mi asticia",
+				((ChapulinAction) actions.get(0)).getFact());
 	}
 }
