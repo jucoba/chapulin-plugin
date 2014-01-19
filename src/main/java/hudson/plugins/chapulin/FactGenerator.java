@@ -19,49 +19,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.chapulin;
 
-import hudson.Extension;
-import hudson.model.AbstractProject;
-import hudson.tasks.BuildStepDescriptor;
-import hudson.tasks.Publisher;
+import java.util.Random;
 
 /**
- * This class provides build step description. If you're interested to become a
- * fan of Chuck Norris' beard, please visit <a
- * href="http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997"
- * >http://www.facebook.com/pages/Chuck-Norriss-Beard/80391285997</a>.
+ * {@link FactGenerator} provides Chuck Norris facts.
  * @author cliffano
  */
-@Extension
-public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
+public class FactGenerator {
 
     /**
-     * Constructs a {@link BeardDescriptor}.
+     * The configured Chuck Norris facts, from <a href="http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/"
+     * >http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-
+     * programmer-jokes/</a>.
      */
-    public BeardDescriptor() {
-        super(CordellWalkerRecorder.class);
-    }
+    private static final String[] FACTS = {
+            "No contaban con mi astucia",
+            "Todos mis movimientos están fríamente calculados",
+            "Calma, Calma, que no panda el cúnico",
+            "El Chapulin Colorado no ha sido vencido jamás",
+            "Silencio, mis antenitas de vinil están detectando la presencia del enemigo"
+            };
 
     /**
-     * Gets the descriptor display name, used in the post step checkbox
-     * description.
-     * @return the descriptor display name
+     * Random instance.
      */
-    @Override
-    public final String getDisplayName() {
-        return "Activate Chuck Norris";
-    }
+    private static final Random RANDOM = new Random();
 
     /**
-     * Checks whether this descriptor is applicable.
-     * @param clazz
-     *            the class
-     * @return true - of course the beard is applicable
+     * Retrieves a random fact.
+     * @return a random fact
      */
-    @Override
-    public final boolean isApplicable(
-            final Class<? extends AbstractProject> clazz) {
-        return true;
+    public String random() {
+        return FACTS[RANDOM.nextInt(FACTS.length)];
     }
 }

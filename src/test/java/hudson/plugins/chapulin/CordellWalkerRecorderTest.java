@@ -1,4 +1,4 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.chapulin;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;

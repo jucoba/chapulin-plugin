@@ -19,39 +19,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.chapulin;
 
-import java.util.Random;
+import hudson.Extension;
+import hudson.model.AbstractProject;
+import hudson.tasks.BuildStepDescriptor;
+import hudson.tasks.Publisher;
 
-/**
- * {@link FactGenerator} provides Chuck Norris facts.
- * @author cliffano
- */
-public class FactGenerator {
 
-    /**
-     * The configured Chuck Norris facts, from <a href="http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/"
-     * >http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-
-     * programmer-jokes/</a>.
-     */
-    private static final String[] FACTS = {
-            "No contaban con mi astucia",
-            "Todos mis movimientos están fríamente calculados",
-            "Calma, Calma, que no panda el cúnico",
-            "El Chapulin Colorado no ha sido vencido jamás",
-            "Silencio, mis antenitas de vinil están detectando la presencia del enemigo"
-            };
+@Extension
+public class BeardDescriptor extends BuildStepDescriptor<Publisher> {
+
+    
+    public BeardDescriptor() {
+        super(CordellWalkerRecorder.class);
+    }
 
     /**
-     * Random instance.
+     * Gets the descriptor display name, used in the post step checkbox
+     * description.
+     * @return the descriptor display name
      */
-    private static final Random RANDOM = new Random();
+    @Override
+    public final String getDisplayName() {
+        return "Llama al Chapulin Colorado";
+    }
 
-    /**
-     * Retrieves a random fact.
-     * @return a random fact
-     */
-    public String random() {
-        return FACTS[RANDOM.nextInt(FACTS.length)];
+    
+    @Override
+    public final boolean isApplicable(@SuppressWarnings("rawtypes") final Class<? extends AbstractProject> clazz) {    	
+        return true;
     }
 }
