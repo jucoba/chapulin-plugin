@@ -86,7 +86,7 @@ public class CordellWalkerRecorder extends Recorder {
         Action action = null;
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
-            String fact = factGenerator.getRandomFact();
+            String fact = factGenerator.getRandomFact(project.getLastBuild().getResult()).getMessage();
             action = new RoundhouseAction(style, fact);
         }
         return action;
@@ -112,7 +112,7 @@ public class CordellWalkerRecorder extends Recorder {
             final Launcher launcher, final BuildListener listener)
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
-        String fact = factGenerator.getRandomFact();
+        String fact = factGenerator.getRandomFact(build.getResult()).getMessage();
         build.getActions().add(new RoundhouseAction(style, fact));
         return true;
     }
