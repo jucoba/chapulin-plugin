@@ -38,7 +38,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
-		when(mockGenerator.random()).thenReturn(
+		when(mockGenerator.getRandomFact()).thenReturn(
 				"Chuck Norris burst the dot com bubble.");
 
 		Action action = recorder.getProjectAction(mockProject);
@@ -55,7 +55,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockBuild.getResult()).thenReturn(Result.FAILURE);
 		when(mockBuild.getActions()).thenReturn(actions);
 
-		when(mockGenerator.random()).thenReturn(
+		when(mockGenerator.getRandomFact()).thenReturn(
 				"Chuck Norris burst the dot com bubble.");
 
 		assertEquals(0, actions.size());

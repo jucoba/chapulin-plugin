@@ -13,7 +13,7 @@ public class FactGeneratorTest extends TestCase {
 	public void testRandomGivesAtLeast2Facts() {
 		String lastFact = null;
 		for (int i = 0; i < 1000000; i++) {
-			String currFact = generator.random();
+			String currFact = generator.getRandomFact();
 			if (lastFact != null && !lastFact.equals(currFact)) {
 				return;
 			}

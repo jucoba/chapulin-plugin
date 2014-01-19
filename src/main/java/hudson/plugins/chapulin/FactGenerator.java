@@ -29,11 +29,7 @@ import java.util.Random;
  */
 public class FactGenerator {
 
-    /**
-     * The configured Chuck Norris facts, from <a href="http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-programmer-jokes/"
-     * >http://www.codesqueeze.com/the-ultimate-top-25-chuck-norris-the-
-     * programmer-jokes/</a>.
-     */
+    
     private static final String[] FACTS = {
             "No contaban con mi astucia",
             "Todos mis movimientos están fríamente calculados",
@@ -42,16 +38,11 @@ public class FactGenerator {
             "Silencio, mis antenitas de vinil están detectando la presencia del enemigo"
             };
 
-    /**
-     * Random instance.
-     */
+    
     private static final Random RANDOM = new Random();
 
-    /**
-     * Retrieves a random fact.
-     * @return a random fact
-     */
-    public String random() {
+    
+    public String getRandomFact() {
         return FACTS[RANDOM.nextInt(FACTS.length)];
     }
 }
