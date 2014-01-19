@@ -26,6 +26,7 @@ import hudson.model.AbstractBuild;
 import hudson.model.AbstractProject;
 import hudson.model.Action;
 import hudson.model.BuildListener;
+import hudson.model.Result;
 import hudson.tasks.BuildStepMonitor;
 import hudson.tasks.Recorder;
 
@@ -85,9 +86,12 @@ public class CordellWalkerRecorder extends Recorder {
     public final Action getProjectAction(final AbstractProject<?, ?> project) {
         Action action = null;
         if (project.getLastBuild() != null) {
-            Style style = Style.get(project.getLastBuild().getResult());
-            String fact = factGenerator.getRandomFact();
-            action = new ChapulinAction(style, fact);
+        	Result result = project.getLastBuild().getResult();
+            Style style = Style.get(result);
+            Fact fact = factGenerator.getRandomFact(result);
+            String message = fact.getMessage();
+            LOGGER.info("Chapulin on getProjectAction '"+message);
+            action = new ChapulinAction(style, message);
         }
         return action;
     }
@@ -112,7 +116,8 @@ public class CordellWalkerRecorder extends Recorder {
             final Launcher launcher, final BuildListener listener)
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
-        String fact = factGenerator.getRandomFact();
+        String fact = factGenerator.getRandomFact(build.getResult()).getMessage();
+        LOGGER.info("Chapulin on Perform '"+fact);
         build.getActions().add(new ChapulinAction(style, fact));
         return true;
     }

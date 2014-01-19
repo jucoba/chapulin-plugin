@@ -17,13 +17,13 @@ import junit.framework.TestCase;
 
 public class CordellWalkerRecorderTest extends TestCase {
 
-	private FactGenerator mockGenerator;
+	private FactGenerator mockedFactGenerator;
 	private CordellWalkerRecorder recorder;
 
 	@Override
 	public void setUp() {
-		mockGenerator = mock(FactGenerator.class);
-		recorder = new CordellWalkerRecorder(mockGenerator);
+		mockedFactGenerator = mock(FactGenerator.class);
+		recorder = new CordellWalkerRecorder(mockedFactGenerator);
 	}
 
 	public void testGetProjectActionWithNoLastBuildGivesNullAction() {
@@ -38,8 +38,11 @@ public class CordellWalkerRecorderTest extends TestCase {
 
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
-		when(mockGenerator.getRandomFact()).thenReturn(
-				"No contaban con mi asticia");
+		
+		PositiveFact positiveMockedFact = mock(PositiveFact.class);
+		when(positiveMockedFact.getMessage()).thenReturn("No contaban com mi astucia");
+		when(mockedFactGenerator.getRandomFact(Result.SUCCESS)).thenReturn(
+				positiveMockedFact);
 
 		Action action = recorder.getProjectAction(mockProject);
 
@@ -48,26 +51,29 @@ public class CordellWalkerRecorderTest extends TestCase {
 		assertNotNull(((ChapulinAction) action).getFact());
 	}
 
-	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact()
+	public void testPerformConBuildFallidoDebeRetornarLaImagenDeBadAssYUnaFraseDeBuildFallido()
 			throws Exception {
 		List<Action> actions = new ArrayList<Action>();
-		AbstractBuild mockBuild = mock(AbstractBuild.class);
-		when(mockBuild.getResult()).thenReturn(Result.FAILURE);
-		when(mockBuild.getActions()).thenReturn(actions);
+		AbstractBuild abstractBuildMock = mock(AbstractBuild.class);
+		when(abstractBuildMock.getResult()).thenReturn(Result.FAILURE);
+		when(abstractBuildMock.getActions()).thenReturn(actions);
 
-		when(mockGenerator.getRandomFact()).thenReturn(
-				"No contaban con mi asticia");
+		NegativeFact negativeMockedFact = mock(NegativeFact.class);
+		when(negativeMockedFact.getMessage()).thenReturn("Calma, que no panda el cúnico");
+		
+		when(mockedFactGenerator.getRandomFact(Result.FAILURE)).thenReturn(
+				negativeMockedFact);
 
 		assertEquals(0, actions.size());
 
-		recorder.perform(mockBuild, mock(Launcher.class),
+		recorder.perform(abstractBuildMock, mock(Launcher.class),
 				mock(BuildListener.class));
 
 		assertEquals(1, actions.size());
 		assertTrue(actions.get(0) instanceof ChapulinAction);
 		assertEquals(Style.BAD_ASS, ((ChapulinAction) actions.get(0))
 				.getStyle());
-		assertEquals("No contaban con mi asticia",
+		assertEquals("Calma, que no panda el cúnico",
 				((ChapulinAction) actions.get(0)).getFact());
 	}
 }
