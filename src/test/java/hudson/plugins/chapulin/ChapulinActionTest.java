@@ -2,7 +2,7 @@ package hudson.plugins.chapulin;
 
 import junit.framework.TestCase;
 
-public class RoundhouseActionTest extends TestCase {
+public class ChapulinActionTest extends TestCase {
 
 	private ChapulinAction action;
 
