@@ -21,6 +21,8 @@
  */
 package hudson.plugins.chapulin;
 
+import hudson.model.Result;
+
 import java.util.Random;
 
 /**
@@ -45,4 +47,15 @@ public class FactGenerator {
     public String getRandomFact() {
         return FACTS[RANDOM.nextInt(FACTS.length)];
     }
+    
+public Fact getRandomFact(Result result) {
+		
+		if (result.equals(Result.SUCCESS))
+		{
+			return new PositiveFact();
+		}else {
+			return new NegativeFact();
+		}
+		
+	}
 }
