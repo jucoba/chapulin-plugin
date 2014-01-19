@@ -24,13 +24,35 @@ package hudson.plugins.chapulin;
 import hudson.model.Result;
 
 
+import java.util.Random;
+
+
 public class FactGenerator {
+	
+	private static final Random RANDOM = new Random();
+
+    
+	private static final String[] FACTS = {
+        "No contaban con mi astucia",
+        "Todos mis movimientos están fríamente calculados",
+        "Calma, Calma, que no panda el cúnico",
+        "El Chapulin Colorado no ha sido vencido jamás",
+        "Silencio, mis antenitas de vinil están detectando la presencia del enemigo"
+        };
+	
+	public String getRandomFact() {
+		return FACTS[RANDOM.nextInt(FACTS.length)];
+	}
+    
+
+
+
+
 
     
     
+public Fact getRandomFact(Result result) {
 
-
-	public Fact getRandomFact(Result result) {
 		
 		if (result.equals(Result.SUCCESS))
 		{
