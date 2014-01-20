@@ -70,7 +70,7 @@ public final class RoundhouseAction implements Action {
      * @return the display name
      */
     public String getDisplayName() {
-        return "Chuck Norris";
+        return "El Chapulin Colorado";
     }
 
     /**

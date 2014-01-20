@@ -25,10 +25,7 @@ import hudson.model.Result;
 
 import java.util.Random;
 
-/**
- * {@link FactGenerator} provides Chuck Norris facts.
- * @author cliffano
- */
+
 public class FactGenerator {
 
     

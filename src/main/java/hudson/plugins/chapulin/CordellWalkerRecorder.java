@@ -71,7 +71,7 @@ public class CordellWalkerRecorder extends Recorder {
      */
     public CordellWalkerRecorder(final FactGenerator factGenerator) {
         this.factGenerator = factGenerator;
-        LOGGER.info("Chuck Norris is activated");
+        LOGGER.info("El Chapulin Colorado ha sido activado");
     }
 
     /**
