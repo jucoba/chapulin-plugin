@@ -6,20 +6,20 @@
         <version>1.434</version>
     </parent>
 
-    <groupId>org.jubecoba.hudson.plugins</groupId>
+    <groupId>org.jucoba.hudson.plugins</groupId>
     <artifactId>chapulin</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>Chapulin Plugin</name>
     <description>Muestra en cada build, la foto del Chapulin  Colorado y una de sus famosas frases. Basado en el plugin de Chuck Norris																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</description>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin</url>
+    <url>http://wiki.jenkins-ci.org/display/JENKINS/Chapulin+Plugin</url>
     <packaging>hpi</packaging>
 
     <developers>
         <developer>
-            <id>cliffano</id>
-            <name>Cliffano Subagio</name>
-            <email>blah@cliffano.com</email>
-            <timezone>+10</timezone>
+            <id>jucoba</id>
+            <name>Jubel Correa</name>
+            <email>jubel.correa@gmail.com</email>
+            <timezone>-5</timezone>
         </developer>
     </developers>
     <licenses>
