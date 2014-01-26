@@ -23,23 +23,14 @@ package hudson.plugins.chapulin;
 
 import hudson.model.Result;
 
-/**
- * This class provides various Chuck Norris' styles.
- * @author cliffano
- */
+
 public enum Style {
 
-    /**
-     * A happy Chuck Norris showing a thumb up.
-     */
+    
     THUMB_UP,
-    /**
-     * An alert Chuck Norris with a martial arts stance.
-     */
+   
     ALERT,
-    /**
-     * A total bad ass Chuck Norris ready to give you a good ass whoopin'.
-     */
+    
     BAD_ASS;
 
     /**

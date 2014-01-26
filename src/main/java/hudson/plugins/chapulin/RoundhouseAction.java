@@ -89,10 +89,7 @@ public final class RoundhouseAction implements Action {
         return "chapulin";
     }
 
-    /**
-     * Gets the Chuck Norris style.
-     * @return the style
-     */
+    
     public Style getStyle() {
         Style theStyle;
         if (mStyle != null) {
@@ -103,10 +100,7 @@ public final class RoundhouseAction implements Action {
         return theStyle;
     }
 
-    /**
-     * Gets the Chuck Norris fact.
-     * @return the fact
-     */
+    
     public String getFact() {
         String theFact;
         if (mFact != null) {
