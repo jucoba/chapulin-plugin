@@ -17,6 +17,6 @@ public class RoundhouseActionTest extends TestCase {
 				.getFact());
 		assertEquals("El Chapulin Colorado", action.getDisplayName());
 		assertNull(action.getIconFileName());
-		assertEquals("chucknorris", action.getUrlName());
+		assertEquals("chapulin", action.getUrlName());
 	}
 }
