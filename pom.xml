@@ -126,10 +126,11 @@
     </reporting>
     
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/chucknorris-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/chucknorris-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/chucknorris-plugin</url>
+        <connection>https://github.com/jucoba/chapulin-plugin.git</connection>
+        <developerConnection>https://github.com/jucoba/chapulin-plugin.git</developerConnection>
+        <url>https://github.com/jucoba/chapulin-plugin</url>
     </scm>
+    
 
     <pluginRepositories>
         <pluginRepository>
